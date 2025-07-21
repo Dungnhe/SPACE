@@ -1,0 +1,110 @@
+<!DOCTYPE html>
+<html lang="vi">
+<head>
+  <meta charset="UTF-8">
+  <title>Đăng nhập - Cảnh báo</title>
+  <style>
+    body {
+      background: #ffe6e6;
+      font-family: Arial, sans-serif;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      justify-content: center;
+      height: 100vh;
+      margin: 0;
+    }
+
+    .login-box {
+      background: white;
+      padding: 30px;
+      border: 2px solid #ff4d4d;
+      border-radius: 10px;
+      box-shadow: 0 0 15px rgba(255, 77, 77, 0.4);
+      width: 90%;
+      max-width: 400px;
+      text-align: center;
+    }
+
+    h2 {
+      color: #cc0000;
+      margin-bottom: 20px;
+    }
+
+    input {
+      width: 100%;
+      padding: 10px;
+      margin: 8px 0;
+      border-radius: 5px;
+      border: 1px solid #ff9999;
+    }
+
+    button {
+      width: 100%;
+      padding: 10px;
+      background: #ff4d4d;
+      color: white;
+      border: none;
+      border-radius: 5px;
+      font-weight: bold;
+      cursor: pointer;
+    }
+
+    .warning {
+      color: #ff0000;
+      font-size: 0.9em;
+      margin-top: 10px;
+    }
+
+    .admin-label {
+      margin-top: 15px;
+      color: #990000;
+      font-size: 0.85em;
+      font-weight: bold;
+      opacity: 0.7;
+    }
+
+    .success-message {
+      display: none;
+      font-size: 24px;
+      color: green;
+      font-weight: bold;
+      text-align: center;
+      margin-top: 20px;
+    }
+  </style>
+</head>
+<body>
+
+  <div class="login-box" id="loginBox">
+    <h2>🔐 Yêu cầu đăng nhập</h2>
+    <input type="text" id="username" placeholder="Tên người dùng">
+    <input type="password" id="password" placeholder="Mật khẩu">
+    <button onclick="checkLogin()">Đăng nhập</button>
+    <div class="warning">⚠️ Cảnh báo: Chỉ người được cấp quyền mới có thể truy cập.</div>
+    <div class="admin-label">admin2</div>
+  </div>
+
+  <div class="success-message" id="successMessage">
+    ✅ Đăng nhập thành công!<br>MkUyRTJFMkUyMDIwRDIwMkQyMDJFMkQyRDJFMjAyRTJFMkUyRTIwMkQyRDJEMkUyRTJFMkUyMDJEMkUyRTJEMkUyMDJFMkQyRA==
+  </div>
+
+  <script>
+    function checkLogin() {
+      const user = document.getElementById('username').value.trim();
+      const pass = document.getElementById('password').value.trim();
+      const correctPassword = "https://www.facebook.com/minhnenlaai";
+
+      if (pass === correctPassword) {
+        // Ẩn hộp đăng nhập
+        document.getElementById('loginBox').style.display = "none";
+        // Hiện bảng chữ chào mừng
+        document.getElementById('successMessage').style.display = "block";
+      } else {
+        alert("Sai mật khẩu! Vui lòng kiểm tra lại.");
+      }
+    }
+  </script>
+
+</body>
+</html>

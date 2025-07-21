@@ -1,0 +1,67 @@
+<!DOCTYPE html>
+<html lang="vi">
+<head>
+  <meta charset="UTF-8">
+  <title>codeee</title>
+  <style>
+    body {
+      background: #f8f8ff;
+      font-family: Arial, sans-serif;
+      padding: 50px;
+    }
+
+    .script-box {
+      background: #ffe6f0;
+      border: 2px solid #ff99cc;
+      border-radius: 12px;
+      padding: 20px;
+      max-width: 700px;
+      margin: auto;
+      box-shadow: 0 0 10px rgba(255, 153, 204, 0.3);
+      position: relative;
+    }
+
+    .script-box h3 {
+      margin-top: 0;
+      color: #e60073;
+    }
+
+    .script-box pre {
+      background: #fff0f5;
+      border: 1px solid #ffb3d9;
+      padding: 10px;
+      border-radius: 8px;
+      overflow-x: auto;
+      color: #333;
+      font-family: Consolas, monospace;
+    }
+
+    .icon-copy {
+      position: absolute;
+      top: 20px;
+      right: 20px;
+      cursor: pointer;
+      font-size: 18px;
+      color: #e60073;
+    }
+  </style>
+</head>
+<body>
+
+  <div class="script-box">
+    <div class="icon-copy" onclick="copyScript()">📋</div>
+    <h3>Code</h3>
+    <pre id="scriptCode">login.html
+  </div>
+
+  <script>
+    function copyScript() {
+      const code = document.getElementById("scriptCode").innerText;
+      navigator.clipboard.writeText(code).then(() => {
+        alert("Đã sao chép đoạn mã!");
+      });
+    }
+  </script>
+
+</body>
+</html>
